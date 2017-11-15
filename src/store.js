@@ -1,12 +1,10 @@
-import { createStore, applyMiddleware } from 'redux';
+
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import promiseMiddleware from 'redux-promise-middleware';
+import membersReducer from './reducers/membersReducer';
+import messagesReducer from './reducers/messagesReducer';
 
-export function reducer(state, action = {}) {
-  return Object.assign({}, state, {
-    messages: action.payload
-  });
-}
-
-export const store = createStore(reducer, {}, applyMiddleware(
-  promiseMiddleware()
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+export const rootReducer = combineReducers({messages:messagesReducer, members:membersReducer});
+export const store = createStore(rootReducer,{}, composeEnhancers(applyMiddleware(promiseMiddleware())
 ));

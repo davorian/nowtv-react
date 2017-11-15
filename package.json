@@ -15,5 +15,13 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "enzyme": "^3.1.1",
+    "enzyme-adapter-react-15.4": "^1.0.5",
+    "ramda": "^0.25.0",
+    "react-addons-test-utils": "^15.4.2",
+    "react-test-renderer": "^15.4.2",
+    "reselect": "^3.0.1"
   }
 }
