@@ -9,7 +9,7 @@ Avatar.defaultProps = {
 };
 
 Avatar.propTypes = {
-  avatar: PropTypes.string.isRequired
+  avatar: PropTypes.string
 };
 
 export default Avatar

@@ -29,7 +29,7 @@ App.defaultProps = {
 };
 
 App.propTypes = {
-  messages: PropTypes.oneOfType([PropTypes.array,PropTypes.object]).isRequired,
+  messages: PropTypes.oneOfType([PropTypes.array,PropTypes.object]),
   members: PropTypes.oneOfType([PropTypes.array,PropTypes.object]).isRequired,
   getChatLog: PropTypes.func.isRequired,
   getChatters: PropTypes.func.isRequired

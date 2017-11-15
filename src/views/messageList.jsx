@@ -19,7 +19,7 @@ MessageList.defaultProps = {
 };
 
 MessageList.propTypes = {
-  messages: PropTypes.oneOfType([PropTypes.array,PropTypes.object]).isRequired,
+  messages: PropTypes.oneOfType([PropTypes.array,PropTypes.object]),
   members: PropTypes.oneOfType([PropTypes.array,PropTypes.object]).isRequired,
 };
 
