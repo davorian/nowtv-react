@@ -8,7 +8,7 @@ import uuid from 'uuid-v4';
 const MessageList = ({messages, members}) => {
   if(!messages) return null;
   const sortedMessages = sortItemsByDate('timestamp', messages);
-  const messageListItems = sortedMessages.map((msg, i) => {
+  const messageListItems = sortedMessages.map((msg) => {
     const member = findMemberWithId(members, msg.userId);
     return (<MessageListItem  key={uuid()} {...{msg, member}}/>);
   });
