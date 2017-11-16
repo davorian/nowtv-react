@@ -9,7 +9,7 @@ describe('actions', () => {
       payload: getMessages()
     };
     expect(actions.getChatLog()).toEqual(expectedAction)
-  })
+  });
 
   it('should create an action to get members', () => {
     const expectedAction = {

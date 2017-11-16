@@ -2,15 +2,17 @@ import React from 'react'
 import MessageListItem from "./messageListItem";
 import {sortItemsByDate} from '../utils/sortDates';
 import PropTypes from 'prop-types';
+import { findMemberWithId } from '../selectors/selectors'
+import uuid from 'uuid-v4';
 
 const MessageList = ({messages, members}) => {
   if(!messages) return null;
   const sortedMessages = sortItemsByDate('timestamp', messages);
-  return (<ul>
-    {sortedMessages.map((msg, i) => {
-      return <MessageListItem key={`msg${i}`} {...{msg, members}}/>
-    })}
-  </ul>)
+  const messageListItems = sortedMessages.map((msg, i) => {
+    const member = findMemberWithId(members, msg.userId);
+    return (<MessageListItem  key={uuid()} {...{msg, member}}/>);
+  });
+  return (<ul>{messageListItems}</ul>)
 };
 
 MessageList.defaultProps = {

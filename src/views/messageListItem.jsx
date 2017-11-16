@@ -1,11 +1,9 @@
 import React from 'react'
-import { findMemberWithId } from '../selectors/selectors'
 import Avatar from './avatar';
 import TimeStamp from './timeStamp';
 import PropTypes from 'prop-types';
 
-const MessageListItem = ({msg, members}) => {
-  let member = findMemberWithId(members, msg.userId);
+const MessageListItem = ({msg, member}) => {
   const email = member?member.email:'';
   return (
     <li className='tooltip'>
@@ -20,12 +18,12 @@ const MessageListItem = ({msg, members}) => {
 
 MessageListItem.defaultProps = {
   msg: {},
-  members : [],
+  member : {},
 };
 
 MessageListItem.propTypes = {
   msg: PropTypes.object.isRequired,
-  members: PropTypes.oneOfType([PropTypes.array,PropTypes.object]).isRequired,
+  member: PropTypes.object
 };
 
 export default MessageListItem
